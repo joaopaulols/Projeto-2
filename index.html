@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang ="pr-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Controle de chaves</title>
+
+</head>
+
+<body>
+	<h1>Controle de chaves</h1>
+		<form>
+			Nome: <input type="text" name="form_nome_usuario" value=""><br>
+			RG:   <input type="number" id="form_rg_usuario" value=""><br>
+
+		</form>
+
+		<button>Gravar informações</button>
+
+</body>
+
+</html>
+
+<script>
+
+
+	function gravaInformacao() {
+
+	// RECEBE DADOS FORMULARIO
+	let nomeUsuario = document.getElementsByName("form_nome_usuario");
+	let rgUsuario = document.getElementsById("form_rg_usuario");
+
+	console.log(nomeUsuario);
+	console.log(rgUsuario);
+
+	}
+
+var button = document.querySelector("button");	
+
+button.onclick = gravaInformacao;
+
+</script>
