@@ -11,7 +11,7 @@
 	<h1>Controle de chaves</h1>
 		<form>
 			Nome: <input type="text" name="form_nome_usuario" value=""><br>
-			RG:   <input type="number" id="form_rg_usuario" value=""><br>
+			RG:   <input type="text" name="form_rg_usuario" id="form_rg_usuario" onkeyup="gravaInformacao()"><br>
 
 		</form>
 
@@ -24,13 +24,13 @@
 <script>
 
 
+
 	function gravaInformacao() {
 
-	// RECEBE DADOS FORMULARIO
-	let nomeUsuario = document.getElementsByName("form_nome_usuario");
-	let rgUsuario = document.getElementsById("form_rg_usuario");
+	
+	var rgUsuario = document.getElementsById("form_rg_usuario").value;
+	
 
-	console.log(nomeUsuario);
 	console.log(rgUsuario);
 
 	}
