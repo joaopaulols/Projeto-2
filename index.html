@@ -10,8 +10,11 @@
 <body>
 	<h1>Controle de chaves</h1>
 		<form>
-			Nome: <input type="text" name="form_nome_usuario" value=""><br>
-			RG:   <input type="text" name="form_rg_usuario" id="form_rg_usuario" onkeyup="gravaInformacao()"><br>
+			Nome: <input type="text" name="form_nome_usuario" id="form_nome_usuario"><br>
+			RG:   <input type="text" name="form_rg_usuario" id="form_rg_usuario"><br>
+			Data de retirada:   <input id="date" type="date"><br>
+			Hora : <input id="hora-ret" type="time" name="hora-ret"><br><br><br>
+
 
 		</form>
 
@@ -24,19 +27,32 @@
 <script>
 
 
-
 	function gravaInformacao() {
 
-	
-	var rgUsuario = document.getElementsById("form_rg_usuario").value;
-	
 
+	var nomeUsuario = document.getElementById("form_nome_usuario").value;
+	var rgUsuario = document.getElementById("form_rg_usuario").value;
+	var dataRetirada = document.getElementById("date").value;
+	var horaRet = document.getElementById("hora-ret").value;
+	console.log(nomeUsuario);
 	console.log(rgUsuario);
+	console.log(dataRetirada);
+	console.log(horaRet);
+
+	document.write("Nome: " + nomeUsuario);
+	document.write("<br>");
+	document.write("Documento " + rgUsuario);
+	document.write("<br>");
+	document.write("Data do registro " + dataRetirada);
+	document.write("<br>");
+	document.write("Hora do registro " + horaRet);
+	document.write("<br>");
+	document.write("Informações salvas com sucesso!!!");
 
 	}
 
-var button = document.querySelector("button");	
+	var button = document.querySelector("button");	
 
-button.onclick = gravaInformacao;
+    button.onclick = gravaInformacao;
 
 </script>
