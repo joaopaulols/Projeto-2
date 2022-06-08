@@ -10,15 +10,16 @@
 <body>
 	<h1>Controle de chaves</h1>
 		<form>
-			Nome: <input type="text" name="form_nome_usuario" id="form_nome_usuario"><br>
-			RG:   <input type="text" name="form_rg_usuario" id="form_rg_usuario"><br>
-			Data de retirada:   <input id="date" type="date"><br>
-			Hora : <input id="hora-ret" type="time" name="hora-ret"><br><br><br>
-
-
+			Nome: <input type="text" name="form_nome_usuario" id="form_nome_usuario"><br><br>
+			RG:   <input type="text" name="form_rg_usuario" id="form_rg_usuario"><br><br>
+			Data de retirada:   <input id="date" type="date"><br><br>
+			Hora : <input id="hora-ret" type="time" name="hora-ret"><br><br>
+			Número da chave retirada:   <input type="number" name="nChave" id="nChave"><br><br><br>
 		</form>
 
-		<button>Gravar informações</button>
+		<button>Gravar informações</button><br><br>
+		<button id="busca_chave">Buscar chave</button>
+
 
 </body>
 
@@ -34,6 +35,7 @@
 	var rgUsuario = document.getElementById("form_rg_usuario").value;
 	var dataRetirada = document.getElementById("date").value;
 	var horaRet = document.getElementById("hora-ret").value;
+	var nChave = document.getElementById("nChave").value;
 	console.log(nomeUsuario);
 	console.log(rgUsuario);
 	console.log(dataRetirada);
@@ -41,18 +43,23 @@
 
 	document.write("Nome: " + nomeUsuario);
 	document.write("<br>");
-	document.write("Documento " + rgUsuario);
+	document.write("Documento: " + rgUsuario);
 	document.write("<br>");
-	document.write("Data do registro " + dataRetirada);
+	document.write("Data da retirada: " + dataRetirada);
 	document.write("<br>");
-	document.write("Hora do registro " + horaRet);
+	document.write("Hora da retirada: " + horaRet);
+	document.write("<br>");
+	document.write("Número da chave solicitada: " + nChave);
 	document.write("<br>");
 	document.write("Informações salvas com sucesso!!!");
+	
 
 	}
 
 	var button = document.querySelector("button");	
-
     button.onclick = gravaInformacao;
+
+    /*var button = document.getElementById("busca_chave");
+    button.onclick = verificaDisponibilidade; */
 
 </script>
