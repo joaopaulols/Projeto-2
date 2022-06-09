@@ -9,6 +9,8 @@
 
 <body>
 	<h1>Controle de chaves</h1>
+
+	<h2>Controle de entrega</h2>
 		<form>
 			Nome: <input type="text" name="form_nome_usuario" id="form_nome_usuario"><br><br>
 			RG:   <input type="text" name="form_rg_usuario" id="form_rg_usuario"><br><br>
@@ -17,8 +19,16 @@
 			Número da chave retirada:   <input type="number" name="nChave" id="nChave"><br><br><br>
 		</form>
 
-		<button>Gravar informações</button><br><br>
-		<button id="busca_chave">Buscar chave</button>
+		<button>Salva dados de entrega</button><br><br>
+		<h3>Controle de devolução</h3>
+		
+		<form>
+			Nome: <input type="text" name="nome_usuario" id="nome_usuario"><br><br>
+			Data de entrega:   <input id="date-dev" type="date"><br><br>
+			Hora : <input id="hora-dev" type="time" name="hora-dev"><br><br>
+			Número da chave devolvida:   <input type="number" name="nChaveDevolvida" id="nChaveDevolvida"><br><br><br>
+		</form>
+			<button id="devolucao">Salvar dados de devolução</button><br><br>
 
 
 </body>
@@ -27,6 +37,8 @@
 
 <script>
 
+	var nChave = "3";
+	
 
 	function gravaInformacao() {
 
@@ -36,10 +48,7 @@
 	var dataRetirada = document.getElementById("date").value;
 	var horaRet = document.getElementById("hora-ret").value;
 	var nChave = document.getElementById("nChave").value;
-	console.log(nomeUsuario);
-	console.log(rgUsuario);
-	console.log(dataRetirada);
-	console.log(horaRet);
+
 
 	document.write("Nome: " + nomeUsuario);
 	document.write("<br>");
@@ -56,10 +65,29 @@
 
 	}
 
+	function baixa() {
+
+		var usuario = document.getElementById("nome_usuario").value;
+		var nChaveDevolvida = document.getElementById("nChaveDevolvida").value;
+		var dataDevolucao = document.getElementById("date-dev").value;
+		var horaDev = document.getElementById("hora-dev").value;
+		
+		if (nChaveDevolvida==nChave){
+		document.write("Chave " +nChaveDevolvida+ " devolvida com sucesso!!! Por " +usuario+ " dia " +dataDevolucao+ " ás " +horaDev);
+		nChave = "";
+
+
+	} else {
+		document.write("Esta chave não foi retirada anteriormente");
+	}
+
+}
+
 	var button = document.querySelector("button");	
     button.onclick = gravaInformacao;
 
-    /*var button = document.getElementById("busca_chave");
-    button.onclick = verificaDisponibilidade; */
+
+    var button = document.getElementById("devolucao");
+    button.onclick = baixa;
 
 </script>
